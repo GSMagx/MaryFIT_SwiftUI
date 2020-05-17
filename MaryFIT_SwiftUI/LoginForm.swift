@@ -14,24 +14,17 @@ struct LoginForm: View {
         ZStack {
             Color(red: 0.79, green: 0.59, blue: 0.59, opacity: 0.6)
                 .edgesIgnoringSafeArea(.all).blur(radius: 20)
-            
-            
-            
+
             VStack {
                 Text("Hello, World!")
+                Text(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/)
                     
             }
-            .padding()
-            
-            VStack {
-                Text("UserForm")
-            }
-        }
-        
-    }
+
 }
 
-
+    }
+}
 
 
 struct LoginForm_Previews: PreviewProvider {
