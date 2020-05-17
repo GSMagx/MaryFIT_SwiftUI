@@ -18,7 +18,6 @@ struct LoginForm: View {
             VStack {
                 Text("Hello, World!")
                 Text(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/)
-                    
             }
 
 }
