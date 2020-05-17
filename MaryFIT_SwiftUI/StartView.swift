@@ -10,20 +10,19 @@ import SwiftUI
 
 struct StartView: View {
     
-    @State private var isShowingDetailView = false
-    @State private var selection: String? = nil
+        @State private var isShowingDetailView = false
     
-//    init() {
-//        
-//        let navBarAppearance = UINavigationBarAppearance()
-//        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed, .font: UIFont(name: "ArialRoundedMTBold", size: 35)!]
-//        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.black, .font: UIFont(name: "ArialRoundedMTBold", size: 40)!]
-//        
-//        UINavigationBar.appearance().standardAppearance = navBarAppearance
-//        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-//        UINavigationBar.appearance().compactAppearance = navBarAppearance
-//        
-//    }
+    init() {
+        
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed, .font: UIFont(name: "ArialRoundedMTBold", size: 35)!]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.black, .font: UIFont(name: "ArialRoundedMTBold", size: 40)!]
+        
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        UINavigationBar.appearance().compactAppearance = navBarAppearance
+        
+    }
     
     var body: some View {
         NavigationView {
@@ -32,11 +31,10 @@ struct StartView: View {
                 TitleText()
                     .position(x: 170, y: 210)
                 HStack(alignment: .bottom) {
-                    NavigationLink(destination: SecondView(), isActive: $isShowingDetailView) {EmptyView()}
-                    NavigationLink(destination: SecondView(), tag: "SecondView", selection: $selection) { EmptyView() }
-                    Button (action: {
-                       
-                        self.selection = "SecondView"
+                    
+                    NavigationLink(destination: SecondView(), isActive: $isShowingDetailView) { EmptyView() }
+                    Button(action: {
+                     self.isShowingDetailView = true
                     })
                     { Image("Button")
                         .resizable()
