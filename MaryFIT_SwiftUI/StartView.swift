@@ -10,7 +10,7 @@ import SwiftUI
 
 struct StartView: View {
     
-        @State private var isShowingDetailView = false
+        @State private var isShowSecondView = false
     
     init() {
         
@@ -32,15 +32,28 @@ struct StartView: View {
                     .position(x: 170, y: 210)
                 HStack(alignment: .bottom) {
                     
-                    NavigationLink(destination: SecondView(), isActive: $isShowingDetailView) { EmptyView() }
-                    Button(action: {
-                     self.isShowingDetailView = true
-                    })
-                    { Image("Button")
+                    Button(action: {self.isShowSecondView.toggle()})
+                    {
+//                        Color.white
+//                        .frame(width: 38, height: 6)
+//                        .cornerRadius(3)
+//                        .frame(width: 130, height: 6, alignment: .leading)
+//                        .background(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.08)))
+//                        .cornerRadius(3)
+//                        .padding()
+//                        .frame(width: 150, height: 24)
+//                        .background(Color(#colorLiteral(red: 0.7882352941, green: 0.8196078431, blue: 0.862745098, alpha: 1)))
+//                        .cornerRadius(12)
+//                        .shadow(color: Color.white, radius: 0, x: 0, y: 1)
+
+                        Image("Button")
                         .resizable()
                         .renderingMode(.original)
                         .aspectRatio(contentMode: .fit)
                         .position(x: 300, y: 720)
+                    }
+                    .sheet(isPresented: $isShowSecondView) {
+                        SecondView()
                     }
                 }
             }

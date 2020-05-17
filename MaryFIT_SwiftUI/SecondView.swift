@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SecondView: View {
 
-    @State private var isShowingDetailView = false
+    @State private var isShowLoginForm = false
     
     var body: some View {
      //   NavigationView {
@@ -46,15 +46,15 @@ struct SecondView: View {
                     }
                     
                     VStack {
-                        NavigationLink(destination: LoginForm(), isActive: $isShowingDetailView) { EmptyView() }
-                        Button(action: {
-                         self.isShowingDetailView = true
-                        }) {
+                        Button(action: {self.isShowLoginForm.toggle()})
+                        {
                             RoundedRectangle(cornerRadius: 20).foregroundColor(.black)
                                 .frame(width: nil, height: 50.0)
                                 
                                 .overlay(Text("Create Account").foregroundColor(.white))
                         }
+                        .sheet(isPresented: $isShowLoginForm) {
+                                              LoginForm()
                         HStack(alignment: .center, spacing: 20.0) {
                             
                             HStack {
@@ -77,6 +77,7 @@ struct SecondView: View {
         }
     }
     
+    }
 }
 
 //}
