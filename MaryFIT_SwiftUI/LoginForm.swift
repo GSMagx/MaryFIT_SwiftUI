@@ -13,7 +13,7 @@ struct LoginForm: View {
     @State private var userEmail : String = ""
     @State private var userPassword : String = ""
     var body: some View {
-        NavigationView{
+        //  NavigationView{
         ZStack(alignment: .leading) {
             Color(red: 0.79, green: 0.59, blue: 0.59, opacity: 0.3)
                 .edgesIgnoringSafeArea(.all).blur(radius: 20)
@@ -33,61 +33,102 @@ struct LoginForm: View {
                         .lineLimit(2)
                 }
                 
-                HStack {
-                    Image(systemName: "person.circle")
-                        
-                    TextField("Name", text: $userName)
+                VStack(alignment: .leading, spacing: 12.0) {
                     
-                }
-                .padding()
-                
-                HStack {
-                    Image(systemName: "envelope")
+                    
+                    HStack {
+                        Image(systemName: "person.circle.fill")
+                            
+                            .foregroundColor(Color(#colorLiteral(red: 0.6549019608, green: 0.7137254902, blue: 0.862745098, alpha: 1)))
+                            .frame(width: 44, height: 44)
+                            .background(Color("background1"))
+                            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
+                       //     .padding(.leading)
                         
-                    TextField("Email", text: $userEmail)
-                }
-                .padding()
-                HStack {
-                    Image(systemName: "lock")
+                        TextField("Name".uppercased(), text: $userName)
+                            .keyboardType(.emailAddress)
+                            .font(.subheadline)
+                                      //         .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.leading)
+                            .frame(height: 44)
                         
-                    VStack {
-                        TextField("Password", text: $userPassword)
+                        
+                    }
+                    
+                    
+                    HStack {
+                        
+                        Image(systemName: "person.crop.circle.fill")
+                            .foregroundColor(Color(#colorLiteral(red: 0.6549019608, green: 0.7137254902, blue: 0.862745098, alpha: 1)))
+                            .frame(width: 44, height: 44)
+                            .background(Color("background1"))
+                            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
+                    //        .padding(.leading)
+                        
+                        TextField("Your Email".uppercased(), text: $userEmail)
+                            .keyboardType(.emailAddress)
+                            .font(.subheadline)
+                                    //           .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.leading)
+                            .frame(height: 44)
+                        
+                        
+                    }
+                    
+                    
+                    HStack  {
+                        
+                        Image(systemName: "lock.fill")
+                            .foregroundColor(Color(#colorLiteral(red: 0.6549019608, green: 0.7137254902, blue: 0.862745098, alpha: 1)))
+                            .frame(width: 44, height: 44)
+                            .background(Color("background1"))
+                            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
+                         //   .padding(.leading)
+                        
+                        SecureField("Password".uppercased(), text: $userPassword)
+                            .keyboardType(.default)
+                            .font(.subheadline)
+                            //                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.leading)
+                            .frame(height: 44)
+                         
                         
                     }
                 
                 }
-                .padding()
-             //   VStack() {
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                        Text("Sign Up")
-                            .multilineTextAlignment(.center)
-                            .frame( width: 350.0, height: 50.0)
-                            .background(Color(red: 0.961, green: 0.71, blue: 0.639))
-                            .foregroundColor(.white)
-                            .font(.system(size: 20))
+                
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Text("Sign Up")
+                        .multilineTextAlignment(.center)
+                        .frame( width: 350.0, height: 50.0)
+                        .background(Color(red: 0.961, green: 0.71, blue: 0.639))
+                        .foregroundColor(.white)
+                        .font(.system(size: 20))
                         .cornerRadius(10)
-                            
-                            .padding()
-                  //  }
+                        
+                        .padding()
+                    
                 }
                 Text("Terms of Use and Privacy Policy")
                     .padding(.leading, 60.0)
                 
                 HStack(alignment: .center, spacing: 20.0){
                     Text("Already have account?")
-                
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    Text("Log in").bold()
-                }
-
+                    
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                        Text("Log in").bold()
+                    }
+                    
                 }
                 .padding([.top, .leading], 60.0)
-                }
-        .padding()
             }
-            }
-            
+            .padding()
         }
+    }
+    
 }
 
 
