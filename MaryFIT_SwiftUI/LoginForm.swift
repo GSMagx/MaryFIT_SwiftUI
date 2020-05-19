@@ -24,6 +24,7 @@ struct LoginForm: View {
                     Text("Sign up to get")
                         .font(.system(size: 25))
                         .bold()
+                    .padding()
                 }
                 
                 VStack {
@@ -31,6 +32,9 @@ struct LoginForm: View {
                         .font(.system(size: 60))
                         .bold()
                         .lineLimit(2)
+                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .shadow(color: Color.black.opacity(0.25), radius: 5, x: 0, y: 15)
+                    
                 }
                 
                 VStack(alignment: .leading, spacing: 12.0) {
@@ -49,6 +53,7 @@ struct LoginForm: View {
                         TextField("Name".uppercased(), text: $userName)
                             .keyboardType(.emailAddress)
                             .font(.subheadline)
+                            
                                       //         .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.leading)
                             .frame(height: 44)
@@ -108,18 +113,25 @@ struct LoginForm: View {
                         .foregroundColor(.white)
                         .font(.system(size: 20))
                         .cornerRadius(10)
+                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
                         
                         .padding()
                     
                 }
                 Text("Terms of Use and Privacy Policy")
                     .padding(.leading, 60.0)
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
                 
                 HStack(alignment: .center, spacing: 20.0){
                     Text("Already have account?")
+                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
                     
                     Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                         Text("Log in").bold()
+                        
                     }
                     
                 }

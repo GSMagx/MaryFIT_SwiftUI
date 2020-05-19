@@ -18,6 +18,7 @@ struct StartView: View {
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed, .font: UIFont(name: "ArialRoundedMTBold", size: 35)!]
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.black, .font: UIFont(name: "ArialRoundedMTBold", size: 40)!]
         
+        
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
         UINavigationBar.appearance().compactAppearance = navBarAppearance
@@ -25,8 +26,11 @@ struct StartView: View {
     }
     
     var body: some View {
+        
         NavigationView {
+           
             ZStack {
+                
                 Color(red: 0.961, green: 0.71, blue: 0.639).edgesIgnoringSafeArea(.all).blur(radius: 20)
                 TitleText()
                     .position(x: 170, y: 210)
@@ -46,11 +50,23 @@ struct StartView: View {
 //                        .cornerRadius(12)
 //                        .shadow(color: Color.white, radius: 0, x: 0, y: 1)
 
-                        Image("Button")
-                        .resizable()
-                        .renderingMode(.original)
-                        .aspectRatio(contentMode: .fit)
-                        .position(x: 300, y: 720)
+//                        Image("Button")
+//                        .resizable()
+//                        .renderingMode(.original)
+//                        .aspectRatio(contentMode: .fit)
+//                        .position(x: 300, y: 720)
+                        
+                        Text("Start Training")
+                        .multilineTextAlignment(.center)
+                        .frame( width: 350.0, height: 60.0)
+                            .background(Color.white)
+                        .foregroundColor(.black)
+                        .font(.system(size: 20))
+                        .cornerRadius(10)
+                        .clipShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
+                        .shadow(color: Color.black.opacity(0.45), radius: 5, x: 2, y: 15)
+                        .position(x: 300, y: 540)
+                        .padding()
                     }
                     .sheet(isPresented: $isShowSecondView) {
                         SecondView()
@@ -58,6 +74,7 @@ struct StartView: View {
                 }
             }
             .navigationBarTitle("MaryFIT.app", displayMode: .inline)
+            
         }
     }
 }
@@ -74,23 +91,30 @@ struct TitleText: View {
             
             
             VStack {
+                
                 Text("Make Yourself")
-                    .font(.custom("Lobster-Regular", size: 65))
+                    .font(.custom("Lobster-Regular", size: 45))
                     .lineLimit(2)
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .shadow(color: Color.black.opacity(0.25), radius: 5, x: 0, y: 25)
+                .padding()
             }
             
             VStack {
                 Text("Better")
-                    .font(.custom("Lobster-Regular", size: 80))
+                    .font(.custom("Lobster-Regular", size: 70))
                     .fontWeight(.bold)
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .shadow(color: Color.black.opacity(0.55), radius: 5, x: 0, y: 5)
             }
             
             VStack() {
                 Text("Your personal fitness trainer")
                     
                     .font(.custom("Lobster-Regular", size: 20))
-                    
                     .multilineTextAlignment(.leading)
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .shadow(color: Color.black.opacity(0.25), radius: 5, x: 0, y: 5)
             }
             .padding()
             ZStack {
@@ -101,8 +125,9 @@ struct TitleText: View {
                     .shadow(radius: 30)
                     .padding()
             }
-            .padding([.bottom, .trailing], -400.0)
+            .padding([.bottom, .trailing], -100.0)
         }
         .padding()
     }
+
 }

@@ -24,6 +24,9 @@ struct SecondView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .edgesIgnoringSafeArea(.all).shadow(radius: 20)
+                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .shadow(color: Color.black.opacity(0.25), radius: 25, x: 0, y: 5)
+                    
                     
                 }
                 .padding(.all, -250.0)
@@ -33,25 +36,39 @@ struct SecondView: View {
                         Text("Your Ultimate Personal Trainer")
                             .fontWeight(.bold)
                             .multilineTextAlignment(.center)
-                            .foregroundColor(.white)
-                            .font(.system(size: 40))
-                            .lineLimit(2)
-                        
+                            .foregroundColor(.black)
+                            .font(.system(size: 20))
+                            .lineLimit(3)
+                        .padding()
                     }
+                    .padding()
                     VStack {
                         Text("Personalized workouts and plans for any fitness goal and skill level")
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.center)
-                        
+                            .font(.system(size: 10))
+                        .lineLimit(2)
+                        .padding()
                     }
                     
                     VStack {
                         Button(action: {self.isShowLoginForm.toggle()})
                         {
-                            RoundedRectangle(cornerRadius: 20).foregroundColor(.black)
-                                .frame(width: nil, height: 50.0)
-                                
-                                .overlay(Text("Create Account").foregroundColor(.white))
+                            Text("Create Account")
+                            .multilineTextAlignment(.center)
+                            .frame( width: 350.0, height: 50.0)
+                            .background(Color(red: 0.961, green: 0.71, blue: 0.639))
+                            .foregroundColor(.white)
+                            .font(.system(size: 20))
+                            .cornerRadius(10)
+                            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
+                            
+                            .padding()
+//                            RoundedRectangle(cornerRadius: 20).foregroundColor(.black)
+//                                .frame(width: nil, height: 50.0)
+//
+//                                .overlay(Text("Create Account").foregroundColor(.white))
                         }
                         .sheet(isPresented: $isShowLoginForm) {
                                               LoginForm()
