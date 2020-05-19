@@ -24,7 +24,7 @@ struct LoginForm: View {
                     Text("Sign up to get")
                         .font(.system(size: 25))
                         .bold()
-                    .padding()
+                        .padding()
                 }
                 
                 VStack {
@@ -32,8 +32,8 @@ struct LoginForm: View {
                         .font(.system(size: 60))
                         .bold()
                         .lineLimit(2)
-                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    .shadow(color: Color.black.opacity(0.25), radius: 5, x: 0, y: 15)
+                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .shadow(color: Color.black.opacity(0.25), radius: 5, x: 0, y: 15)
                     
                 }
                 
@@ -48,13 +48,13 @@ struct LoginForm: View {
                             .background(Color("background1"))
                             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                             .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
-                       //     .padding(.leading)
+                        //     .padding(.leading)
                         
                         TextField("Name".uppercased(), text: $userName)
                             .keyboardType(.emailAddress)
                             .font(.subheadline)
                             
-                                      //         .textFieldStyle(RoundedBorderTextFieldStyle())
+                            //         .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.leading)
                             .frame(height: 44)
                         
@@ -70,12 +70,12 @@ struct LoginForm: View {
                             .background(Color("background1"))
                             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                             .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
-                    //        .padding(.leading)
+                        //        .padding(.leading)
                         
                         TextField("Your Email".uppercased(), text: $userEmail)
                             .keyboardType(.emailAddress)
                             .font(.subheadline)
-                                    //           .textFieldStyle(RoundedBorderTextFieldStyle())
+                            //           .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.leading)
                             .frame(height: 44)
                         
@@ -91,7 +91,7 @@ struct LoginForm: View {
                             .background(Color("background1"))
                             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                             .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
-                         //   .padding(.leading)
+                        //   .padding(.leading)
                         
                         SecureField("Password".uppercased(), text: $userPassword)
                             .keyboardType(.default)
@@ -99,10 +99,10 @@ struct LoginForm: View {
                             //                    .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.leading)
                             .frame(height: 44)
-                         
+                        
                         
                     }
-                
+                    
                 }
                 
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
@@ -121,13 +121,13 @@ struct LoginForm: View {
                 }
                 Text("Terms of Use and Privacy Policy")
                     .padding(.leading, 60.0)
-                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
+                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
                 
                 HStack(alignment: .center, spacing: 20.0){
                     Text("Already have account?")
-                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
+                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
                     
                     Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                         Text("Log in").bold()
