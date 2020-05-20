@@ -10,6 +10,7 @@ import SwiftUI
 
 struct Start: View {
     
+    
     @State private var isShowSecondView = false
     
     var body: some View {
@@ -35,7 +36,6 @@ struct Start: View {
                         .scaleEffect(3)
                         .foregroundColor(Color.black)
                         .frame(maxWidth: .infinity, maxHeight: 80)
-                        
                         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                         .shadow(color: Color.black.opacity(0.45), radius: 5, x: 0, y: 5)
                         
@@ -46,23 +46,25 @@ struct Start: View {
                         .scaleEffect(1)
                         .foregroundColor(Color.black)
                         .frame(maxWidth: .infinity)
+                        //  .minimumScaleFactor(0.5)
                         
                         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                         .shadow(color: Color.black.opacity(0.55), radius: 5, x: 0, y: 5)
                     
                     
                     
-                    Image("fit_logo").resizable()
-                        .renderingMode(.original)
-                        .aspectRatio(contentMode: .fill)
-                        .padding(.all, 20.0)
-                        .frame( maxWidth: gr.size.width, maxHeight: gr.size.height / 2.5 )
-                    
+                    ScrollView(.horizontal, showsIndicators: false) {
                         
-                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                        .shadow(color: Color.black.opacity(0.55), radius: 5, x: 20, y: 25)
-                    
-                        .padding(20)
+                        HStack(spacing: 30.0) {
+                            ForEach(sectionData) { item in
+                                ImageList(section: item)
+                            }
+                            
+                        }
+                        .padding(30.0)
+                        //    .padding(.bottom, 30)
+                        
+                    }
                     
                     Button(action: {self.isShowSecondView.toggle()})
                     {
@@ -87,8 +89,67 @@ struct Start: View {
     }
 }
 
+
+
 struct Start_Previews: PreviewProvider {
     static var previews: some View {
         Start()
     }
 }
+
+struct ImageList: View {
+    
+    var section: Section
+    
+    var body: some View {
+        
+        
+        VStack {
+            
+            section.image.resizable()
+                .renderingMode(.original)
+                .aspectRatio(contentMode: .fill)
+                .padding(.all, 20.0)
+                
+                .overlay(Text(section.text).bold().clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+                .shadow(color: Color.black.opacity(0.55), radius: 1, x: 3, y: 0)
+                    .multilineTextAlignment(.center)
+                    
+                    .padding(.top, -80.0))
+            
+            
+                .font(.system(size: 25))
+            
+                .foregroundColor(.black)
+                
+                
+                
+                
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .shadow(color: Color.black.opacity(0.55), radius: 5, x: 20, y: 25)
+                
+                .padding()
+            
+        }
+        .frame(width: 250, height: 250)
+        
+        
+        
+    }
+}
+
+struct Section: Identifiable {
+    
+    var id = UUID()
+    var image : Image
+    var text : String
+}
+
+let sectionData = [
+    Section( image: Image("Pic_1"), text: ("LiveFit") ),
+    Section( image: Image("Pic_2"), text: ("Shortcut To Size")),
+    Section( image: Image("Pic_3"), text: ("Joga")),
+    Section( image: Image("Pic_4"), text: ("Running"))
+]
+
+
