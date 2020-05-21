@@ -32,6 +32,7 @@ struct LoginForm: View {
                         .font(.system(size: 60))
                         .bold()
                         .lineLimit(2)
+                        .minimumScaleFactor(0.7).padding()
                         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                         .shadow(color: Color.black.opacity(0.25), radius: 5, x: 0, y: 15)
                     
@@ -149,3 +150,5 @@ struct LoginForm_Previews: PreviewProvider {
         LoginForm()
     }
 }
+
+

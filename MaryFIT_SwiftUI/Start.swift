@@ -10,80 +10,109 @@ import SwiftUI
 
 struct Start: View {
     
-    
+    @State private var showHelp = false
     @State private var isShowSecondView = false
     
     var body: some View {
-        GeometryReader  { gr in
-            ZStack {
-                Color(red: 0.961, green: 0.71, blue: 0.639).edgesIgnoringSafeArea(.all).blur(radius: 20)
-                
-                VStack {
+        
+        VStack {
+            
+            HStack() {
+                Button(action: { self.showHelp.toggle()}) {
+                    Image(systemName: "questionmark.circle" )
+                        .renderingMode(.original)
+                       
+                        .frame(width: 26.0, height: 26.0)
+                        .font(.system(size: 26, weight: .medium))
+                        .brightness(0.6)
                     
-                    Text("Make Yourself")
-                        .font(.title)
-                        .scaleEffect(2)
-                        .foregroundColor(Color.black)
-                        .frame(maxWidth: .infinity, maxHeight: 50)
                         
-                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                        .shadow(color: Color.black.opacity(0.55), radius: 5, x: 0, y: 5)
+                }
+                .padding(.leading, 350.0)
+                .sheet(isPresented: $showHelp) {
+                   HelpView()
+                }
+            }
+            .padding(.trailing)
+            
+           
+            GeometryReader  { gr in
+                ZStack {
+                    Color(red: 0.961, green: 0.71, blue: 0.639).edgesIgnoringSafeArea(.all).blur(radius: 20)
+                    
+                    VStack {
                         
-                        .padding(2)
-                    
-                    Text("Better")
-                        .font(.largeTitle)
-                        .scaleEffect(3)
-                        .foregroundColor(Color.black)
-                        .frame(maxWidth: .infinity, maxHeight: 80)
-                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                        .shadow(color: Color.black.opacity(0.45), radius: 5, x: 0, y: 5)
+                        Text("Make Yourself")
+                            .font(.title)
+                            .scaleEffect(2)
+                            .foregroundColor(Color.black)
+                            .frame(maxWidth: .infinity, maxHeight: 50)
+                            
+                            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .shadow(color: Color.black.opacity(0.55), radius: 5, x: 0, y: 5)
+                            
+                            .padding(2)
                         
-                        .padding(28)
-                    
-                    Text("Your personal fitness trainer")
-                        .font(.title)
-                        .scaleEffect(1)
-                        .foregroundColor(Color.black)
-                        .frame(maxWidth: .infinity)
-                        //  .minimumScaleFactor(0.5)
+                        Text("Better")
+                            .font(.largeTitle)
+                            .scaleEffect(3)
+                            .foregroundColor(Color.black)
+                            .frame(maxWidth: .infinity, maxHeight: 80)
+                            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .shadow(color: Color.black.opacity(0.45), radius: 5, x: 0, y: 5)
+                            
+                            .padding(28)
                         
-                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                        .shadow(color: Color.black.opacity(0.55), radius: 5, x: 0, y: 5)
-                    
-                    
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
+                        Text("Your personal fitness trainer")
+                            .font(.title)
+                            .scaleEffect(1)
+                            .foregroundColor(Color.black)
+                            .frame(maxWidth: .infinity)
+                            //  .minimumScaleFactor(0.5)
+                            
+                            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .shadow(color: Color.black.opacity(0.55), radius: 5, x: 0, y: 5)
                         
-                        HStack(spacing: 30.0) {
-                            ForEach(sectionData) { item in
-                                ImageList(section: item)
+                        
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            
+                            HStack(spacing: 20.0) {
+                                ForEach(sectionData) { item in
+                                    GeometryReader { geometry in
+                                        ImageList(section: item)
+                                            
+                                            .rotation3DEffect(Angle(degrees: Double(geometry.frame(in: .global).minX - 30) / -20
+                                            ), axis: (x: 10, y: 10, z: 10))
+                                    }
+                                    .frame(width: 275, height: 275)
+                                }
+                                
                             }
+                            .padding(0.0)
+                            //    .padding(.bottom, 30)
                             
                         }
-                        .padding(30.0)
-                        //    .padding(.bottom, 30)
                         
-                    }
-                    
-                    Button(action: {self.isShowSecondView.toggle()})
-                    {
-                        Text("Start Training")
-                            .multilineTextAlignment(.center)
-                            .frame( width: 350.0, height: 60.0)
-                            .background(Color.white)
-                            .foregroundColor(.black)
-                            .font(.system(size: 20))
-                            .cornerRadius(10)
-                            .clipShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
-                            .shadow(color: Color.black.opacity(0.45), radius: 5, x: 2, y: 15)
-                    }
-                    .sheet(isPresented: self.$isShowSecondView) {
-                        SecondView()
+                        Button(action: {self.isShowSecondView.toggle()})
+                        {
+                            Text("Start Training")
+                                .multilineTextAlignment(.center)
+                                .frame( width: 350.0, height: 60.0)
+                                .background(Color.white)
+                                .foregroundColor(.black)
+                                .font(.system(size: 20))
+                                .cornerRadius(10)
+                                .clipShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
+                                .shadow(color: Color.black.opacity(0.45), radius: 5, x: 2, y: 15)
+                        }
+                        .sheet(isPresented: self.$isShowSecondView) {
+                            SecondView()
+                        }
+                        
                     }
                     
                 }
-                
             }
         }
     }
@@ -111,20 +140,14 @@ struct ImageList: View {
                 .aspectRatio(contentMode: .fill)
                 .padding(.all, 20.0)
                 
-                .overlay(Text(section.text).bold().clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
-                .shadow(color: Color.black.opacity(0.55), radius: 1, x: 3, y: 0)
-                    .multilineTextAlignment(.center)
+                .overlay(Text(section.text).bold()
                     
-                    .padding(.top, -80.0))
-            
-            
+                    .multilineTextAlignment(.center)
+                    .padding(.top, -115.0))
+                
+                
                 .font(.system(size: 25))
-            
                 .foregroundColor(.black)
-                
-                
-                
-                
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                 .shadow(color: Color.black.opacity(0.55), radius: 5, x: 20, y: 25)
                 
