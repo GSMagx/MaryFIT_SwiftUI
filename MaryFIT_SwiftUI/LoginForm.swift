@@ -105,7 +105,7 @@ struct LoginForm: View {
                     }
                     
                 }
-                
+                .padding()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     Text("Sign Up")
                         .multilineTextAlignment(.center)
