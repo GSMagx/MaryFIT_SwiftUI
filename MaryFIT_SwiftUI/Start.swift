@@ -132,29 +132,30 @@ struct ImageList: View {
     
     var body: some View {
         
+        LoopingPlayer()
         
-        VStack {
-            
-            section.image.resizable()
-                .renderingMode(.original)
-                .aspectRatio(contentMode: .fill)
-                .padding(.all, 20.0)
-                
-                .overlay(Text(section.text).bold()
-                    
-                    .multilineTextAlignment(.center)
-                    .padding(.top, -115.0))
-                
-                
-                .font(.system(size: 25))
-                .foregroundColor(.black)
-                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                .shadow(color: Color.black.opacity(0.55), radius: 5, x: 20, y: 25)
-                
-                .padding()
-            
-        }
-        .frame(width: 250, height: 250)
+//        VStack {
+//
+//            section.image.resizable()
+//                .renderingMode(.original)
+//                .aspectRatio(contentMode: .fill)
+//                .padding(.all, 20.0)
+//
+//                .overlay(Text(section.text).bold()
+//
+//                    .multilineTextAlignment(.center)
+//                    .padding(.top, -115.0))
+//
+//
+//                .font(.system(size: 25))
+//                .foregroundColor(.black)
+//                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+//                .shadow(color: Color.black.opacity(0.55), radius: 5, x: 20, y: 25)
+//
+//                .padding()
+//
+//        }
+//        .frame(width: 250, height: 250)
         
         
         

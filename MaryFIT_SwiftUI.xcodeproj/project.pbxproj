@@ -14,6 +14,8 @@
 		FA25CC4A24672CE000BA1B57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA25CC4924672CE000BA1B57 /* Preview Assets.xcassets */; };
 		FA25CC4D24672CE000BA1B57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA25CC4B24672CE000BA1B57 /* LaunchScreen.storyboard */; };
 		FA4DE00024707A5C00A2D9C4 /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4DDFFF24707A5C00A2D9C4 /* LoginForm.swift */; };
+		FA5EF6EB2476F5D100B46E8B /* LoopingPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EF6EA2476F5D100B46E8B /* LoopingPlayer.swift */; };
+		FA5EF6ED2476F72F00B46E8B /* VideoWithBlock.mov in Resources */ = {isa = PBXBuildFile; fileRef = FA5EF6EC2476F72F00B46E8B /* VideoWithBlock.mov */; };
 		FA88489F2475A56B00C375C0 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88489E2475A56B00C375C0 /* HelpView.swift */; };
 		FAB8DA1424746F1800FC93C5 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DA1324746F1800FC93C5 /* Start.swift */; };
 		FACCBCF5246837310060DABF /* Lobster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FACCBCF4246837310060DABF /* Lobster.ttf */; };
@@ -30,6 +32,8 @@
 		FA25CC4C24672CE000BA1B57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA25CC4E24672CE000BA1B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA4DDFFF24707A5C00A2D9C4 /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
+		FA5EF6EA2476F5D100B46E8B /* LoopingPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopingPlayer.swift; sourceTree = "<group>"; };
+		FA5EF6EC2476F72F00B46E8B /* VideoWithBlock.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = VideoWithBlock.mov; sourceTree = "<group>"; };
 		FA88489E2475A56B00C375C0 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		FAB8DA1324746F1800FC93C5 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		FACCBCF4246837310060DABF /* Lobster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster.ttf; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			children = (
 				FA25CC4024672CDE00BA1B57 /* AppDelegate.swift */,
 				FA25CC4224672CDE00BA1B57 /* SceneDelegate.swift */,
+				FA5EF6EC2476F72F00B46E8B /* VideoWithBlock.mov */,
 				FAB8DA1324746F1800FC93C5 /* Start.swift */,
 				FA06C7A52476B68200B8CD12 /* SecondView.swift */,
 				FA4DDFFF24707A5C00A2D9C4 /* LoginForm.swift */,
@@ -76,6 +81,7 @@
 				FA25CC4624672CE000BA1B57 /* Assets.xcassets */,
 				FA25CC4B24672CE000BA1B57 /* LaunchScreen.storyboard */,
 				FA25CC4E24672CE000BA1B57 /* Info.plist */,
+				FA5EF6EA2476F5D100B46E8B /* LoopingPlayer.swift */,
 				FACCBCF6246837380060DABF /* Fonts */,
 				FA25CC4824672CE000BA1B57 /* Preview Content */,
 			);
@@ -156,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5EF6ED2476F72F00B46E8B /* VideoWithBlock.mov in Resources */,
 				FA25CC4D24672CE000BA1B57 /* LaunchScreen.storyboard in Resources */,
 				FA25CC4A24672CE000BA1B57 /* Preview Assets.xcassets in Resources */,
 				FACCBCF5246837310060DABF /* Lobster.ttf in Resources */,
@@ -173,6 +180,7 @@
 				FA4DE00024707A5C00A2D9C4 /* LoginForm.swift in Sources */,
 				FAB8DA1424746F1800FC93C5 /* Start.swift in Sources */,
 				FA25CC4124672CDE00BA1B57 /* AppDelegate.swift in Sources */,
+				FA5EF6EB2476F5D100B46E8B /* LoopingPlayer.swift in Sources */,
 				FA88489F2475A56B00C375C0 /* HelpView.swift in Sources */,
 				FA06C7A62476B68200B8CD12 /* SecondView.swift in Sources */,
 				FA25CC4324672CDE00BA1B57 /* SceneDelegate.swift in Sources */,
