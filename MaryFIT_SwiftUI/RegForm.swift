@@ -40,9 +40,9 @@ struct RegForm: View {
                     ).foregroundColor(Color(red: 0.79, green: 0.59, blue: 0.59, opacity: 0.3))
                         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                         .shadow(color: Color.black.opacity(0.15), radius: 5, x: 5, y: 5)
-                        .padding()
+                      //  .padding()
                         
-                        .frame(height: 200.0)
+                        .frame(height: 148.0)
                         .overlay(HStack {
                             VStack {
                                 HStack {
@@ -56,6 +56,7 @@ struct RegForm: View {
                                         .keyboardType(.emailAddress)
                                         .font(.subheadline)
                                 }
+                               // .padding()
                                 VStack {
                                     HStack {
                                         VStack {
@@ -70,6 +71,7 @@ struct RegForm: View {
                                                     .keyboardType(.emailAddress)
                                                     .font(.subheadline)
                                             }
+                                         //   .padding()
                                             HStack {
                                                 Image(systemName: "lock.fill")
                                                     .foregroundColor(Color(#colorLiteral(red: 0.6549019608, green: 0.7137254902, blue: 0.862745098, alpha: 1)))
@@ -80,18 +82,20 @@ struct RegForm: View {
                                                 SecureField("Password".uppercased(), text: $userPassword)
                                                     .keyboardType(.default)
                                                     .font(.subheadline)
-                                                
+                                              
                                             }
+                                       // .padding()
                                         }
                                         
                                     }
                                 }
                             }
+                            .padding(.vertical)
                         })
                         
                         .padding()
                 }
-                .padding(.bottom, 150.0)
+                .padding(.bottom, 120.0)
                     
                // .padding()
                         .frame(height: 250.0)
