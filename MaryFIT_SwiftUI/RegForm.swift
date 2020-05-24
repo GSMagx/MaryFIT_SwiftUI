@@ -13,6 +13,8 @@ struct RegForm: View {
     @State private var userEmail : String = ""
     @State private var userPassword : String = ""
     
+    @State private var showCourses = false
+    
     var body: some View {
         
         ZStack(alignment: .leading) {
@@ -99,7 +101,8 @@ struct RegForm: View {
                     
                // .padding()
                         .frame(height: 250.0)
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                Button(action: { self.showCourses.toggle() })
+                {
                     Text("Sign Up")
                         .multilineTextAlignment(.center)
                         .frame( width: 350.0, height: 50.0)
@@ -111,8 +114,10 @@ struct RegForm: View {
                         .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
                 
                 }
-                
-                Text("Terms of Use and Privacy Policy")
+                .sheet(isPresented: self.$showCourses ) {
+                    CoursesList()
+                }
+                Text("Terms of Use and Privacy Policy").bold()
                 
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                 .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)

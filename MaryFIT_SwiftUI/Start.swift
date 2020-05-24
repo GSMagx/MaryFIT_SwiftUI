@@ -10,6 +10,10 @@ import SwiftUI
 
 struct Start: View {
     
+    init() {
+        Service.obSomethingSpecial() // test 
+    }
+    
     @State private var showHelp = false
     @State private var isShowSecondView = false
     
