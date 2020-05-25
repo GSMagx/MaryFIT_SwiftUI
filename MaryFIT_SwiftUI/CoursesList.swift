@@ -10,12 +10,10 @@ import SwiftUI
 
 struct CoursesList: View {
     var body: some View {
-        
+        NavigationView {
         HStack {
-            
-            NavigationView {
                 List(dataList) { cours in
-                    NavigationLink(destination: CoursData()) {
+                    NavigationLink(destination: CoursData(coursData: cours )) {
                         
                         HStack(){
                         Image(cours.image).resizable()
@@ -47,8 +45,9 @@ struct CoursesList: View {
                 }
                 
             }
-            .navigationBarTitle("Courses")
+           
         }
+         .navigationBarTitle("Courses")
     }
 }
 
