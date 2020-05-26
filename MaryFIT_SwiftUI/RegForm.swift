@@ -7,17 +7,54 @@
 //
 
 import SwiftUI
+import Firebase
+
 
 struct RegForm: View {
-    @State private var userName : String = ""
-    @State private var userEmail : String = ""
-    @State private var userPassword : String = ""
+    @State  var userName : String = ""
+    @State  var email : String = ""
+    @State  var password : String = ""
     
-    @State private var isFocused = false
-    @State private var showCourses = false
+    @State  var isFocused = false
+    @State  var showCourses = false
     
-    @State private var showAlert = false
-    @State private var showMessage = "Something went wrong"
+    @State  var isSuccessful = false
+    @State  var isLoading = false
+    
+    @State  var showAlert = false
+    @State  var allertMessage = "Something went wrong"
+    
+    @EnvironmentObject var user: UserStore
+    
+    func login(){
+        
+            self.heidkeyboard()
+            self.isFocused = false
+            self.isLoading = true
+ 
+        Auth.auth().signIn(withEmail: email, password: password) {
+            (resoult, error) in
+            self.isLoading = false
+            
+            if error != nil {
+                self.allertMessage = error?.localizedDescription ?? ""
+                self.showAlert = true
+            } else {
+                self.isSuccessful = true
+                self.user.isLogged = true
+                UserDefaults.standard.set(true, forKey: "isLogged")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    
+                    self.email = ""
+                    self.password = ""
+                    self.isSuccessful = false
+                    self.user.showLogin = false
+
+                }
+            }
+        }
+    }
     
     func heidkeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -26,6 +63,7 @@ struct RegForm: View {
     var body: some View {
         
         ZStack {
+            
             ZStack(alignment: .leading) {
                 
                 Color(red: 0.79, green: 0.59, blue: 0.59, opacity: 0.3)
@@ -78,7 +116,7 @@ struct RegForm: View {
                                                         .background(Color("background1"))
                                                         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                                                         .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
-                                                    TextField("Your Email".uppercased(), text: $userEmail)
+                                                    TextField("Your Email".uppercased(), text: $email)
                                                         .keyboardType(.emailAddress)
                                                         .font(.subheadline)
                                                 }
@@ -90,7 +128,7 @@ struct RegForm: View {
                                                         .background(Color("background1"))
                                                         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                                                         .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
-                                                    SecureField("Password".uppercased(), text: $userPassword)
+                                                    SecureField("Password".uppercased(), text: $password)
                                                         .keyboardType(.default)
                                                         .font(.subheadline)
                                                         .onTapGesture {
@@ -142,30 +180,39 @@ struct RegForm: View {
                             .shadow(color: Color.black.opacity(0.15), radius: 5, x: 0, y: 5)
                         
                         Button(action: {
-                            self.showAlert = true
-                            self.isFocused = false
-                            self.heidkeyboard()
+                            self.login()
+//                            self.showAlert = true
+//                            self.isFocused = false
+//                            self.heidkeyboard()
+//                            self.isLoading = true
+                           
                         }) {
                             Text("Log in").bold()
-                                .alert(isPresented: $showAlert) {
-                                    Alert(title: Text("Error"), message: Text(self.showMessage), dismissButton: .default(Text("OK")))
-                            }
-                            
                         }
+                                .alert(isPresented: $showAlert) {
+                                    Alert(title: Text("Error"), message: Text(self.allertMessage), dismissButton: .default(Text("OK")))
+                            }
                     }
                     
                 }
             }
-        }
+        
         .offset(y: isFocused ? -100 : 0)
         .animation(.easeInOut)
         .onTapGesture {
             self.isFocused = false
             self.heidkeyboard()
         }
+       if isLoading {
+           LoadingView()
+       }
+            if isSuccessful {
+                SuccessView()
+            }
+        
     }
 }
-
+}
 struct RegForm_Previews: PreviewProvider {
     static var previews: some View {
         RegForm()

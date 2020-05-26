@@ -3,13 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		32F0F851EB140A0E2AA3EAE6 /* Pods_MaryFIT_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C488B9B72DFB893B2C27026 /* Pods_MaryFIT_SwiftUI.framework */; };
 		FA06C7A62476B68200B8CD12 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06C7A52476B68200B8CD12 /* SecondView.swift */; };
 		FA1E6850247AF62D001D1B7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA1E684F247AF62D001D1B7D /* GoogleService-Info.plist */; };
+		FA204A54247C7223003D0FC4 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA204A53247C7223003D0FC4 /* UserStore.swift */; };
+		FA204A56247C747F003D0FC4 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA204A55247C747F003D0FC4 /* SuccessView.swift */; };
+		FA204A58247C7540003D0FC4 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = FA204A57247C753F003D0FC4 /* success.json */; };
+		FA204A5A247C7564003D0FC4 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA204A59247C7564003D0FC4 /* BlurView.swift */; };
 		FA25CC4124672CDE00BA1B57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA25CC4024672CDE00BA1B57 /* AppDelegate.swift */; };
 		FA25CC4324672CDE00BA1B57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA25CC4224672CDE00BA1B57 /* SceneDelegate.swift */; };
 		FA25CC4724672CE000BA1B57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA25CC4624672CE000BA1B57 /* Assets.xcassets */; };
@@ -23,6 +27,10 @@
 		FAE175FC247ABDE700F910DE /* CoursesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE175FB247ABDE700F910DE /* CoursesList.swift */; };
 		FAE175FE247AC9C900F910DE /* CoursData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE175FD247AC9C900F910DE /* CoursData.swift */; };
 		FAEB7C64247AD91F00360023 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB7C63247AD91F00360023 /* Service.swift */; };
+		FAF101F8247C653400397095 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = FAF101F7247C653400397095 /* loading.json */; };
+		FAF101FB247C669400397095 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FAF101FA247C669400397095 /* Lottie */; };
+		FAF101FD247C673F00397095 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF101FC247C673F00397095 /* LottieView.swift */; };
+		FAF101FF247C6B1C00397095 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF101FE247C6B1C00397095 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +39,10 @@
 		FA06C7A52476B68200B8CD12 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		FA1E684F247AF62D001D1B7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA1E6851247AFE20001D1B7D /* MaryFIT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MaryFIT.entitlements; sourceTree = "<group>"; };
+		FA204A53247C7223003D0FC4 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		FA204A55247C747F003D0FC4 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		FA204A57247C753F003D0FC4 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		FA204A59247C7564003D0FC4 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		FA25CC3D24672CDE00BA1B57 /* MaryFIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaryFIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA25CC4024672CDE00BA1B57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA25CC4224672CDE00BA1B57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +58,9 @@
 		FAE175FB247ABDE700F910DE /* CoursesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesList.swift; sourceTree = "<group>"; };
 		FAE175FD247AC9C900F910DE /* CoursData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursData.swift; sourceTree = "<group>"; };
 		FAEB7C63247AD91F00360023 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		FAF101F7247C653400397095 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		FAF101FC247C673F00397095 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		FAF101FE247C6B1C00397095 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		FEA6E98A128CDCF224BE3B0F /* Pods-MaryFIT_SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaryFIT_SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-MaryFIT_SwiftUI/Pods-MaryFIT_SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32F0F851EB140A0E2AA3EAE6 /* Pods_MaryFIT_SwiftUI.framework in Frameworks */,
+				FAF101FB247C669400397095 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +91,6 @@
 				9A8D63C4EE2B22C357AFC468 /* Pods-MaryFIT_SwiftUI.debug.xcconfig */,
 				FEA6E98A128CDCF224BE3B0F /* Pods-MaryFIT_SwiftUI.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -106,6 +121,9 @@
 				FAB8DA1324746F1800FC93C5 /* Start.swift */,
 				FA06C7A52476B68200B8CD12 /* SecondView.swift */,
 				FAD90BC62476C8A100808D96 /* RegForm.swift */,
+				FA204A53247C7223003D0FC4 /* UserStore.swift */,
+				FA204A55247C747F003D0FC4 /* SuccessView.swift */,
+				FA204A59247C7564003D0FC4 /* BlurView.swift */,
 				FAE175FB247ABDE700F910DE /* CoursesList.swift */,
 				FAE175FD247AC9C900F910DE /* CoursData.swift */,
 				FA88489E2475A56B00C375C0 /* HelpView.swift */,
@@ -114,6 +132,10 @@
 				FA25CC4E24672CE000BA1B57 /* Info.plist */,
 				FAEB7C63247AD91F00360023 /* Service.swift */,
 				FA1E684F247AF62D001D1B7D /* GoogleService-Info.plist */,
+				FAF101FC247C673F00397095 /* LottieView.swift */,
+				FAF101FE247C6B1C00397095 /* LoadingView.swift */,
+				FAF101F7247C653400397095 /* loading.json */,
+				FA204A57247C753F003D0FC4 /* success.json */,
 				FACCBCF6246837380060DABF /* Fonts */,
 				FA25CC4824672CE000BA1B57 /* Preview Content */,
 			);
@@ -155,6 +177,9 @@
 			dependencies = (
 			);
 			name = MaryFIT_SwiftUI;
+			packageProductDependencies = (
+				FAF101FA247C669400397095 /* Lottie */,
+			);
 			productName = MaryFIT_SwiftUI;
 			productReference = FA25CC3D24672CDE00BA1B57 /* MaryFIT.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +208,9 @@
 				Base,
 			);
 			mainGroup = FA25CC3424672CDE00BA1B57;
+			packageReferences = (
+				FAF101F9247C669400397095 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = FA25CC3E24672CDE00BA1B57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -199,7 +227,9 @@
 			files = (
 				FA25CC4D24672CE000BA1B57 /* LaunchScreen.storyboard in Resources */,
 				FA25CC4A24672CE000BA1B57 /* Preview Assets.xcassets in Resources */,
+				FAF101F8247C653400397095 /* loading.json in Resources */,
 				FA1E6850247AF62D001D1B7D /* GoogleService-Info.plist in Resources */,
+				FA204A58247C7540003D0FC4 /* success.json in Resources */,
 				FACCBCF5246837310060DABF /* Lobster.ttf in Resources */,
 				FA25CC4724672CE000BA1B57 /* Assets.xcassets in Resources */,
 			);
@@ -256,14 +286,19 @@
 			files = (
 				FA4DE00024707A5C00A2D9C4 /* LoginForm.swift in Sources */,
 				FAB8DA1424746F1800FC93C5 /* Start.swift in Sources */,
+				FA204A5A247C7564003D0FC4 /* BlurView.swift in Sources */,
 				FAE175FE247AC9C900F910DE /* CoursData.swift in Sources */,
 				FA25CC4124672CDE00BA1B57 /* AppDelegate.swift in Sources */,
 				FA88489F2475A56B00C375C0 /* HelpView.swift in Sources */,
+				FAF101FF247C6B1C00397095 /* LoadingView.swift in Sources */,
+				FA204A56247C747F003D0FC4 /* SuccessView.swift in Sources */,
 				FAE175FC247ABDE700F910DE /* CoursesList.swift in Sources */,
 				FA06C7A62476B68200B8CD12 /* SecondView.swift in Sources */,
 				FAEB7C64247AD91F00360023 /* Service.swift in Sources */,
 				FA25CC4324672CDE00BA1B57 /* SceneDelegate.swift in Sources */,
+				FAF101FD247C673F00397095 /* LottieView.swift in Sources */,
 				FAD90BC72476C8A100808D96 /* RegForm.swift in Sources */,
+				FA204A54247C7223003D0FC4 /* UserStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +438,7 @@
 				CODE_SIGN_ENTITLEMENTS = MaryFIT_SwiftUI/MaryFIT.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"MaryFIT_SwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = D74U932N2V;
 				ENABLE_PREVIEWS = YES;
@@ -426,6 +462,7 @@
 				CODE_SIGN_ENTITLEMENTS = MaryFIT_SwiftUI/MaryFIT.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"MaryFIT_SwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = D74U932N2V;
 				ENABLE_PREVIEWS = YES;
@@ -463,6 +500,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAF101F9247C669400397095 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAF101FA247C669400397095 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAF101F9247C669400397095 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA25CC3524672CDE00BA1B57 /* Project object */;
 }
