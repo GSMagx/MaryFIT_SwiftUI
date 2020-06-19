@@ -36,3 +36,4 @@ struct CoursData_Previews: PreviewProvider {
         CoursData()
     }
 }
+

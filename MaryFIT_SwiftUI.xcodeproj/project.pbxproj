@@ -20,6 +20,7 @@
 		FA25CC4A24672CE000BA1B57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA25CC4924672CE000BA1B57 /* Preview Assets.xcassets */; };
 		FA25CC4D24672CE000BA1B57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA25CC4B24672CE000BA1B57 /* LaunchScreen.storyboard */; };
 		FA4DE00024707A5C00A2D9C4 /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4DDFFF24707A5C00A2D9C4 /* LoginForm.swift */; };
+		FA6FEDE8247ED65C00A4781C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FEDE7247ED65C00A4781C /* MenuView.swift */; };
 		FA88489F2475A56B00C375C0 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88489E2475A56B00C375C0 /* HelpView.swift */; };
 		FAB8DA1424746F1800FC93C5 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DA1324746F1800FC93C5 /* Start.swift */; };
 		FACCBCF5246837310060DABF /* Lobster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FACCBCF4246837310060DABF /* Lobster.ttf */; };
@@ -38,7 +39,6 @@
 		9A8D63C4EE2B22C357AFC468 /* Pods-MaryFIT_SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaryFIT_SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-MaryFIT_SwiftUI/Pods-MaryFIT_SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 		FA06C7A52476B68200B8CD12 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		FA1E684F247AF62D001D1B7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FA1E6851247AFE20001D1B7D /* MaryFIT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MaryFIT.entitlements; sourceTree = "<group>"; };
 		FA204A53247C7223003D0FC4 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		FA204A55247C747F003D0FC4 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		FA204A57247C753F003D0FC4 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
@@ -51,6 +51,7 @@
 		FA25CC4C24672CE000BA1B57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA25CC4E24672CE000BA1B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA4DDFFF24707A5C00A2D9C4 /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
+		FA6FEDE7247ED65C00A4781C /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		FA88489E2475A56B00C375C0 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		FAB8DA1324746F1800FC93C5 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		FACCBCF4246837310060DABF /* Lobster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster.ttf; sourceTree = "<group>"; };
@@ -115,7 +116,6 @@
 		FA25CC3F24672CDE00BA1B57 /* MaryFIT_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				FA1E6851247AFE20001D1B7D /* MaryFIT.entitlements */,
 				FA25CC4024672CDE00BA1B57 /* AppDelegate.swift */,
 				FA25CC4224672CDE00BA1B57 /* SceneDelegate.swift */,
 				FAB8DA1324746F1800FC93C5 /* Start.swift */,
@@ -134,6 +134,7 @@
 				FA1E684F247AF62D001D1B7D /* GoogleService-Info.plist */,
 				FAF101FC247C673F00397095 /* LottieView.swift */,
 				FAF101FE247C6B1C00397095 /* LoadingView.swift */,
+				FA6FEDE7247ED65C00A4781C /* MenuView.swift */,
 				FAF101F7247C653400397095 /* loading.json */,
 				FA204A57247C753F003D0FC4 /* success.json */,
 				FACCBCF6246837380060DABF /* Fonts */,
@@ -293,6 +294,7 @@
 				FAF101FF247C6B1C00397095 /* LoadingView.swift in Sources */,
 				FA204A56247C747F003D0FC4 /* SuccessView.swift in Sources */,
 				FAE175FC247ABDE700F910DE /* CoursesList.swift in Sources */,
+				FA6FEDE8247ED65C00A4781C /* MenuView.swift in Sources */,
 				FA06C7A62476B68200B8CD12 /* SecondView.swift in Sources */,
 				FAEB7C64247AD91F00360023 /* Service.swift in Sources */,
 				FA25CC4324672CDE00BA1B57 /* SceneDelegate.swift in Sources */,

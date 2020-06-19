@@ -10,6 +10,11 @@ import SwiftUI
 
 struct Start: View {
     
+    @State var showProfile = false
+    @State var viewState = CGSize.zero
+    @State var showContent = false
+    @EnvironmentObject var user: UserStore
+    
     init() {
         Service.obSomethingSpecial() // test 
     }
@@ -20,26 +25,26 @@ struct Start: View {
     var body: some View {
         
         VStack {
-            
+          
             HStack() {
                 Button(action: { self.showHelp.toggle()}) {
                     Image(systemName: "questionmark.circle" )
                         .renderingMode(.original)
-                       
+                        
                         .frame(width: 26.0, height: 26.0)
                         .font(.system(size: 26, weight: .medium))
                         .brightness(0.6)
                     
-                        
+                    
                 }
                 .padding(.leading, 350.0)
                 .sheet(isPresented: $showHelp) {
-                   HelpView()
+                    HelpView()
                 }
             }
             .padding(.trailing)
             
-           
+            
             GeometryReader  { gr in
                 ZStack {
                     Color(red: 0.961, green: 0.71, blue: 0.639).edgesIgnoringSafeArea(.all).blur(radius: 20)
@@ -126,7 +131,9 @@ struct Start: View {
 
 struct Start_Previews: PreviewProvider {
     static var previews: some View {
+        
         Start()
+            .environmentObject(UserStore())
     }
 }
 
@@ -178,5 +185,55 @@ let sectionData = [
     Section( image: Image("Pic_3"), text: ("Joga")),
     Section( image: Image("Pic_4"), text: ("Running"))
 ]
+
+struct AvatarView: View {
+    @Binding var showProfile: Bool
+    @EnvironmentObject var user: UserStore
+    
+    var body: some View {
+        VStack {
+            if user.isLogged {
+                Button(action: { self.showProfile.toggle() }) {
+                Image("my_foto")
+                    .renderingMode(.original)
+                    .resizable()
+                    .frame(width: 36, height: 36)
+                    .clipShape(Circle())
+                }
+            } else {
+                Button(action: { self.user.showLogin.toggle() }) {
+                Image(systemName: "person")
+                    .foregroundColor(.primary)
+                    .font(.system(size: 16, weight: .medium))
+                    .frame(width: 36, height: 36)
+                    .background(Color("background3"))
+                    .clipShape(Circle())
+                    .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
+                    .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
+                }
+            }
+        }
+    }
+}
+
+
+let screen = UIScreen.main.bounds
+
+struct HomeBackgroundView: View {
+    @Binding var showProfile: Bool
+    
+    var body: some View {
+        VStack {
+            LinearGradient(gradient: Gradient(colors: [Color("background2"), Color("background1")]), startPoint: .top, endPoint: .bottom)
+                .frame(height: 200)
+            Spacer()
+        }
+        .background(Color("background1"))
+        .clipShape(RoundedRectangle(cornerRadius: showProfile ? 30 : 0, style: .continuous))
+        .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
+    }
+}
+
+
 
 
