@@ -1,0 +1,6 @@
+framework module Pods_MaryFIT_SwiftUI {
+  umbrella header "Pods-MaryFIT_SwiftUI-umbrella.h"
+
+  export *
+  module * { export * }
+}
